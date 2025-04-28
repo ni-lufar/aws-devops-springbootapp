@@ -9,7 +9,7 @@ phases:
       # Log in to Amazon ECR
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 549357020367.dkr.ecr.us-east-1.amazonaws.com
       # Define repository URI and image tag
-      - REPOSITORY_URI=549357020367.dkr.ecr.us-east-1.amazonaws.com/course-end-repourl
+      - REPOSITORY_URI=549357020367.dkr.ecr.us-east-1.amazonaws.com/demo/course-end:latest
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
